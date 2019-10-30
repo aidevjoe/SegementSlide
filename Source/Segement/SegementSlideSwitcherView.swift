@@ -60,7 +60,11 @@ public class SegementSlideSwitcherView: UIView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.backgroundColor = .clear
-        backgroundColor = .white
+        if #available(iOS 13.0, *) {
+            backgroundColor = UIColor.systemBackground
+        } else {     
+            backgroundColor = .white   
+        }
     }
     
     public override func layoutSubviews() {
