@@ -150,6 +150,12 @@ open class SegementSlideViewController: UIViewController {
         segementSlideSwitcherView.reloadBadges()
     }
     
+    public func reloadThemeInSwitcher() {
+        segementSlideContentView.backgroundColor = switcherConfig.switcherBackgroundColor
+        segementSlideScrollView.backgroundColor = switcherConfig.switcherBackgroundColor
+        segementSlideSwitcherView.reloadTheme()
+    }
+    
     /// reload ContentView
     public func reloadContent() {
         waitTobeResetContentOffsetY.removeAll()
