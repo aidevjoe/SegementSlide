@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct SegementSlideSwitcherConfig {
+public class SegementSlideSwitcherConfig {
     
     public static let shared = SegementSlideSwitcherConfig()
     
@@ -19,6 +19,7 @@ public struct SegementSlideSwitcherConfig {
     public var selectedTitleFont: UIFont
     public var normalTitleColor: UIColor
     public var selectedTitleColor: UIColor
+    public var switcherBackgroundColor: UIColor
     public var indicatorWidth: CGFloat
     public var indicatorHeight: CGFloat
     public var indicatorColor: UIColor
@@ -34,6 +35,7 @@ public struct SegementSlideSwitcherConfig {
                 selectedTitleFont: UIFont = UIFont.systemFont(ofSize: 15, weight: .medium),
                 normalTitleColor: UIColor = UIColor.gray,
                 selectedTitleColor: UIColor = UIColor.darkGray,
+                switcherBackgroundColor: UIColor = UIColor.white,
                 indicatorWidth: CGFloat = 30,
                 indicatorHeight: CGFloat = 2,
                 indicatorColor: UIColor = UIColor.darkGray,
@@ -48,6 +50,7 @@ public struct SegementSlideSwitcherConfig {
         self.selectedTitleFont = selectedTitleFont
         self.normalTitleColor = normalTitleColor
         self.selectedTitleColor = selectedTitleColor
+        self.switcherBackgroundColor = switcherBackgroundColor
         self.indicatorWidth = indicatorWidth
         self.indicatorHeight = indicatorHeight
         self.indicatorColor = indicatorColor
