@@ -60,11 +60,7 @@ public class SegementSlideSwitcherView: UIView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.backgroundColor = .clear
-        if #available(iOS 13.0, *) {
-            backgroundColor = UIColor.systemBackground
-        } else {     
-            backgroundColor = .white   
-        }
+        backgroundColor = config.switcherBackgroundColor
     }
     
     public override func layoutSubviews() {
@@ -147,6 +143,15 @@ public class SegementSlideSwitcherView: UIView {
                 titleButton.badge.height = innerConfig.badgeHeightForCustomType
                 titleButton.badge.offset = CGPoint(x: width/2+titleButton.badge.height/2, y: -height/2)
             }
+        }
+    }
+    
+    public func reloadTheme() {
+        backgroundColor = config.switcherBackgroundColor
+        indicatorView.backgroundColor = innerConfig.indicatorColor
+        titleButtons.forEach {
+            $0.setTitleColor(innerConfig.normalTitleColor, for: .normal)
+            $0.setTitleColor(innerConfig.selectedTitleColor, for: .selected)
         }
     }
     
