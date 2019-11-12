@@ -130,6 +130,11 @@ extension SegementSlideViewController {
         if segementSlideHeaderView.trailingConstraint == nil {
             segementSlideHeaderView.trailingConstraint = segementSlideHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         }
+        if let headerV = headerView {
+            segementSlideHeaderView.bottomConstraint = headerV.bottomConstraint
+        } else {
+            segementSlideHeaderView.trailingConstraint = segementSlideHeaderView.heightAnchor.constraint(equalToConstant: 0)
+        }
         segementSlideHeaderView.config(innerHeaderView, segementSlideContentView: segementSlideContentView)
         
         segementSlideSwitcherView.translatesAutoresizingMaskIntoConstraints = false
