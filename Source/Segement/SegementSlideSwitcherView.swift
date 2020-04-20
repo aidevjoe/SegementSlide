@@ -215,14 +215,10 @@ extension SegementSlideSwitcherView {
             return
         }
         guard titleButtons.count != 0 else { return }
-        if let selectedIndex = selectedIndex, selectedIndex >= 0, selectedIndex < titleButtons.count {
-            let titleButton = titleButtons[selectedIndex]
-            titleButton.setTitleColor(innerConfig.normalTitleColor, for: .normal)
-            titleButton.titleLabel?.font = innerConfig.normalTitleFont
-        }
+        titleButtons.forEach { $0.isSelected = false; $0.titleLabel?.font = innerConfig.normalTitleFont }
         guard index >= 0, index < titleButtons.count else { return }
         let titleButton = titleButtons[index]
-        titleButton.setTitleColor(innerConfig.selectedTitleColor, for: .normal)
+        titleButton.isSelected = true
         titleButton.titleLabel?.font = innerConfig.selectedTitleFont
         if animated, indicatorView.frame != .zero {
             UIView.animate(withDuration: 0.25) {
